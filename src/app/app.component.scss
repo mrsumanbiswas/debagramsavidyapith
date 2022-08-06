@@ -14,11 +14,13 @@ main {
     header {
         top: 0;
         height: 10vh;
+        z-index: 10000;
         position: sticky;
         background-color: #1C3879;
     }
 
     #router-outlet {
+        padding: 1rem 3rem;
         min-height: 150vh;
         background-color: #222831;
     }

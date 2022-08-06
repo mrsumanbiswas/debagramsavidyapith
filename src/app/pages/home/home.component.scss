@@ -1,6 +1,35 @@
-#background-pic{
-    max-height: 60vh;
-    img{
-        max-height: 60vh;
+div {
+    margin-top: 2rem;
+}
+
+#background-pic {
+    div {
+        margin: 0;
+    }
+
+    img {
+        max-height: 70vh;
+        border-radius: 0.5%;
     }
 }
+
+#overview {
+    p {
+        padding: 2%;
+        font-weight: 400;
+        font-size: larger;
+        font-style: italic;
+        border-radius: 0.5rem;
+        background-color: #393E46;
+    }
+}
+
+#notice {}
+
+#latest-news {}
+
+#events {}
+
+#featured-gallery {}
+
+#school-map {}

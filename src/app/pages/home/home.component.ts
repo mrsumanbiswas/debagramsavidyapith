@@ -9,11 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   slides = [
-    { img: '../assets/background.jpg' },
-    { img: '../assets/background.jpg' },
-    { img: '../assets/background.jpg' },
-    { img: '../assets/background.jpg' },
-    { img: '../assets/background.jpg' },
+    { img: '../assets/school images/school.jpeg' },
     { img: '../assets/background.jpg' },
   ];
 
@@ -23,8 +19,7 @@ export class HomeComponent implements OnInit {
     dots: true,
     infinite: true,
     autoplay:true,
-
-
+    autoplaySpeed:3000
   };
 
   constructor() { }
