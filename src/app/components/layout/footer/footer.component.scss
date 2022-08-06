@@ -35,12 +35,13 @@ main {
     }
 }
 
-#social-links{
-    span{
-        a{
+#social-links {
+    span {
+        a {
             color: inherit !important;
             text-decoration: none !important;
-            &:hover{
+
+            &:hover {
                 color: royalblue !important;
                 font-size: medium;
                 font-style: italic;
@@ -49,8 +50,27 @@ main {
     }
 }
 
-#school-details{
-    &:hover{
+#school-details {
+    &:hover {
         color: coral !important;
+    }
+}
+
+#site-links {
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+
+    hr{
+        width: 100%;
+    }
+    a {
+        margin-top: 3vh;
+        text-decoration: none !important;
+        color: inherit;
+        &:hover{
+            font-style: italic;
+            font-size: larger;
+        }
     }
 }
