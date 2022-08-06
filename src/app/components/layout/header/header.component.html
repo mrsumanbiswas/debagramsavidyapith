@@ -1,0 +1,33 @@
+<mat-toolbar>
+    <button mat-icon-button id="menu-button" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <!-- App name -->
+    <a *ngIf="!search_quary" id="app" routerLink="/">
+        <img src="/assets/favicon/favicon-32x32.png" alt="school-logo">
+        <span>DEBAGRAM S.A. VIDYAPITH (H.S.)</span>
+    </a>
+    <span class="spacer"></span>
+    <!-- Search fild -->
+    <mat-form-field>
+        <input type="search" matInput placeholder="Search" ngModel [(ngModel)]="search_quary">
+        <button *ngIf="search_quary" matSuffix mat-icon-button aria-label="Clear" (click)="search_quary=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <span class="spacer"></span>
+    <!-- Page buttons -->
+    <div *ngIf="!search_quary" id="nav-buttons">
+        <button mat-button routerLink="doubts">Doubts</button>
+        <button mat-button routerLink="tools">Tools</button>
+    </div>
+    <!-- Account and other buttons -->
+    <div id="end-buttons">
+        <button mat-icon-button aria-label="more vertical options">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>account_circle</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>

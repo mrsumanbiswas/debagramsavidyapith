@@ -1,0 +1,30 @@
+// #2C3333 #395B64 #A5C9CA #E7F6F2 
+//good! #222831 #393E46 #00ADB5 #EEEEEE
+//  black #100F0F
+main {
+    min-height: 100vh;
+    max-width: 100vw;
+    // background-image: url(../assets/background.jpg);
+    // background-repeat: no-repeat;
+    // background-position-x: 0;
+    // background-position-y: -10vh;
+    // background-size: cover;
+    color: #EEEEEE;
+
+    header {
+        top: 0;
+        height: 10vh;
+        position: sticky;
+        background-color: #1C3879;
+    }
+
+    #router-outlet {
+        min-height: 150vh;
+        background-color: #222831;
+    }
+
+    footer {
+        height: 50vh;
+        background-color: #283149;
+    }
+}

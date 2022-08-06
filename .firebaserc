@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "debagramsavidyapith": {
+      "hosting": {
+        "DSAV": [
+          "dsav"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "debagramsavidyapith"
+  }
+}
