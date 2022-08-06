@@ -47,12 +47,10 @@ main {
                 font-style: italic;
             }
         }
-    }
-}
 
-#school-details {
-    &:hover {
-        color: coral !important;
+        &:hover {
+            color: gray !important;
+        }
     }
 }
 
@@ -61,16 +59,19 @@ main {
     display: flex;
     flex-direction: column;
 
-    hr{
+    hr {
         width: 100%;
     }
+
     a {
         margin-top: 3vh;
         text-decoration: none !important;
         color: inherit;
-        &:hover{
+
+        &:hover {
             font-style: italic;
-            font-size: larger;
+            font-size: x-large;
+            text-transform: uppercase;
         }
     }
 }
