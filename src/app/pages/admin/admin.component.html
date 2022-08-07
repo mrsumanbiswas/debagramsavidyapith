@@ -1,1 +1,87 @@
-<p>admin works!</p>
+<mat-tab-group id="main">
+    <mat-tab label="pages">
+        <mat-tab-group>
+            <mat-tab label="Home Page">
+                <mat-stepper orientation="vertical" #stepper>
+                    <mat-step>
+                        <ng-template matStepLabel>Slider Images</ng-template>
+                        <div id="slider-images" *ngFor="let img of homePageData.slide_imgs">
+                            <img [src]="img.img" ,alt="slider-images">
+                        </div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Add </mat-label>
+                            <!-- <input matInput type=""> -->
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious disabled="true">Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel>Overviews</ng-template>
+                        <mat-form-field appearance="outline">
+                            <mat-label>overviews</mat-label>
+                            <textarea matInput [value]="66"></textarea>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel>Overviews</ng-template>
+                        <mat-form-field appearance="outline">
+                            <mat-label>overviews</mat-label>
+                            <textarea matInput [value]="66"></textarea>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel>Overviews</ng-template>
+                        <mat-form-field appearance="outline">
+                            <mat-label>overviews</mat-label>
+                            <textarea matInput [value]="66"></textarea>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel>Overviews</ng-template>
+                        <mat-form-field appearance="outline">
+                            <mat-label>overviews</mat-label>
+                            <textarea matInput [value]="66"></textarea>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel>Overviews</ng-template>
+                        <mat-form-field appearance="outline">
+                            <mat-label>overviews</mat-label>
+                            <textarea matInput [value]="66"></textarea>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </mat-step>
+
+                </mat-stepper>
+            </mat-tab>
+            <mat-tab label=" Page"> Content 2 </mat-tab>
+        </mat-tab-group>
+    </mat-tab>
+    <mat-tab label="a">
+        <mat-tab-group>
+            <mat-tab label=" Page"> Content 2 </mat-tab>
+        </mat-tab-group>
+    </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>
