@@ -9,7 +9,16 @@ div {
 
     img {
         max-height: 70vh;
-        border-radius: 0.5%;
+        border-radius: 0.5rem;
+    }
+
+    p {
+        position: relative;
+        margin-top: -5rem;
+        padding: 0 5rem;
+        font-size: medium;
+        font-weight: 400;
+        opacity: 60%;
     }
 }
 
@@ -32,4 +41,8 @@ div {
 
 #featured-gallery {}
 
-#school-map {}
+#school-map {
+    border: none;
+    margin: 2rem 0;
+    border-radius: 1rem;
+}
