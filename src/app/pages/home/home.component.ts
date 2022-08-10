@@ -8,7 +8,27 @@ import { PageDataService } from '../../services/page-data.service'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  data: homePage | any;
+  data: homePage | any = {
+    slide_imgs: [],
+    overview: '',
+    notice: '',
+    latest_news: {
+      academics: {
+        img: '',
+        details: ''
+      },
+      athletics: {
+        img: '',
+        details: ''
+      },
+      campus_life: {
+        img: '',
+        details: ''
+      }
+    },
+    events: [],
+    featured_gallery: []
+  };
 
   slideConfig = {
     slidesToShow: 1,
