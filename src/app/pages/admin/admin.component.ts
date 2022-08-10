@@ -13,7 +13,6 @@ export class AdminComponent {
   homePageData: homePage = {
     slide_imgs: [{
       img: '',
-      details: ''
     }],
     overview: 'The great boy',
     notice: '',
@@ -42,7 +41,7 @@ export class AdminComponent {
 
   homePage() {
     // return this.pageData.updatePageData('home-page', this.homePageData), console.log('done')
-    return this.pageData.getPageData('home-page')
+    // return this.pageData.getPageData('home-page')
   }
 
 

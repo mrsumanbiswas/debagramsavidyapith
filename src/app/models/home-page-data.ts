@@ -1,7 +1,6 @@
 export interface homePage {
     slide_imgs: {
         img: string;
-        details: string;
     }[];
     overview: string;
     notice: string;

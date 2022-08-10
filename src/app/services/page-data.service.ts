@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { collection, collectionData, doc, DocumentData, Firestore, updateDoc } from '@angular/fire/firestore';
+import { collection, collectionData, doc, DocumentData, DocumentSnapshot, Firestore, getDocs, updateDoc } from '@angular/fire/firestore';
+import { DocumentReference, getDoc } from '@firebase/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,14 +13,14 @@ export class PageDataService {
 
 
   // Get Page Data
-  public getPageData(pageName: string): Observable<DocumentData> {
-    return collectionData(collection(this.afs, `page-data/${pageName}`), { idField: 'id' })
+  public getPageData(pageName: string): Promise<DocumentSnapshot> {
+    return getDoc(doc(this.afs, `page-data/${pageName}`))
   }
 
   // Set Page Data
   updatePageData(pageName: string, pageData: {}) {
     return updateDoc(doc(this.afs, `page-data/${pageName}`), pageData)
-    // .catch((err) => console.log(err))
+      .catch((err) => console.log(err))
   }
 
 }

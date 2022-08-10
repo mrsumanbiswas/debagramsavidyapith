@@ -1,7 +1,6 @@
 <ngx-slick-carousel [config]="slideConfig" id="background-pic">
     <div ngxSlickItem *ngFor="let slide of data.slide_imgs" class="slide">
         <img src="{{ slide.img }}" alt="" height="700px" width="100%">
-        <p>{{slide.details}}</p>
     </div>
 </ngx-slick-carousel>
 <div id="overview">

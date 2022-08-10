@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { homePage } from 'src/app/models/home-page-data';
+import { PageDataService } from '../../services/page-data.service'
 
 @Component({
   selector: 'app-home',
@@ -7,27 +8,7 @@ import { homePage } from 'src/app/models/home-page-data';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  data: homePage={
-    slide_imgs: [],
-    overview: '',
-    notice: '',
-    latest_news: {
-      academics: {
-        img: '',
-        details: ''
-      },
-      athletics: {
-        img: '',
-        details: ''
-      },
-      campus_life: {
-        img: '',
-        details: ''
-      }
-    },
-    events: [],
-    featured_gallery: []
-  };
+  data: homePage | any;
 
   slideConfig = {
     slidesToShow: 1,
@@ -38,14 +19,16 @@ export class HomeComponent implements OnInit {
     autoplaySpeed: 3000
   };
 
-  constructor() {}
+  constructor(private PageData: PageDataService) {
+    this.PageData.getPageData('home-page').then(
+      (value) => (
+        this.data = value.data()
+      )
+    )
+  }
 
   ngOnInit(): void {
-    this.data.slide_imgs = [
-      { img: '../assets/school images/school.jpeg', details: "ssssssssssssssssssssss" },
-      { img: '../assets/background.jpg', details: "Theeeeeeeeeeeeeeee" },
-    ]
-    this.data.overview = "The test"
+
   }
 
 }
