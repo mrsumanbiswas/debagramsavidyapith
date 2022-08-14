@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-page-not-found',
   template: `<img src="../../assets/page-not-found.jpg"
                alt="404-page-not-found"
-               style=" margin: -1rem -3rem; opacity: 85%; width: {{width}}px !important;"
+               style=" margin: -2rem -3rem; opacity: 85%; width: {{width}}px !important;"
               >`
 })
 export class PageNotFoundComponent implements OnInit {
