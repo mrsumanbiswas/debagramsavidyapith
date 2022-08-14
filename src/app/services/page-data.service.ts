@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { collection, collectionData, doc, DocumentData, DocumentSnapshot, Firestore, getDocs, updateDoc } from '@angular/fire/firestore';
-import { DocumentReference, getDoc } from '@firebase/firestore';
-import { Observable } from 'rxjs';
+import { doc, DocumentSnapshot, Firestore, updateDoc } from '@angular/fire/firestore';
+import { getDoc } from '@firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
