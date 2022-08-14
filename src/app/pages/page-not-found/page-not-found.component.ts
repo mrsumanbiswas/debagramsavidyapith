@@ -1,15 +1,20 @@
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-page-not-found',
-  templateUrl: './page-not-found.component.html',
-  styleUrls: ['./page-not-found.component.scss']
+  template: `<img src="../../assets/page-not-found.jpg"
+               alt="404-page-not-found"
+               style=" margin: -1rem -3rem; opacity: 85%; width: {{width}}px !important;"
+              >`
 })
 export class PageNotFoundComponent implements OnInit {
+  width!: number;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.width = window.innerWidth;
   }
 
 }
