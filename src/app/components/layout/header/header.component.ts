@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   search_quary!: string;
-  
-  constructor() { }
 
-  ngOnInit(): void {
+  window_width!: number;
+
+  ngOnInit() {
+    this.window_width = window.innerWidth;
   }
 
+  constructor() { }
 }
