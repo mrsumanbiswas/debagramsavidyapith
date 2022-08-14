@@ -7,7 +7,7 @@ import { PageDataService } from '../../services/page-data.service'
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   data: homePage | any = {
     slide_imgs: [],
     overview: '',
@@ -40,15 +40,13 @@ export class HomeComponent implements OnInit {
   };
 
   constructor(private PageData: PageDataService) {
+
     this.PageData.getPageData('home-page').then(
       (value) => (
         this.data = value.data()
-      )
+      ),
+      (err) => (console.log(err))
     )
-  }
-
-  ngOnInit(): void {
-
   }
 
 }
