@@ -19,9 +19,8 @@ export class HomeComponent {
     autoplaySpeed: 3000
   };
 
-  constructor(private database: DatabaseService) {
+  constructor(database: DatabaseService) {
 
-    // database.writeData('page','home',this.data)
     database.readData('page', 'home').then(
       (value) => {
         console.log(1, this.data)
