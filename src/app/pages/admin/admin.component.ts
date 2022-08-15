@@ -8,29 +8,7 @@ import { homePage } from 'src/app/models/home-page-data';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
-  homePageData: homePage = {
-    slide_imgs: [{
-      img: '',
-    }],
-    overview: 'The great boy',
-    notice: '',
-    latest_news: {
-      academics: {
-        img: '',
-        details: ''
-      },
-      athletics: {
-        img: '',
-        details: ''
-      },
-      campus_life: {
-        img: '',
-        details: ''
-      }
-    },
-    events: [],
-    featured_gallery: []
-  }
+  homePageData!: homePage;
 
   constructor(
     private _formBuilder: FormBuilder
