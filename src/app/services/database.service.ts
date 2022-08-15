@@ -16,6 +16,12 @@ import {
 })
 export class DatabaseService {
 
+  writeData(base_url: string, id: string, value: any) {
+    set(child(ref(this.database), `${base_url}/${id}`), value)
+      .catch((error) => {
+        console.log(error);
+      })
+  }
 
   constructor(private database: Database) { }
 }
