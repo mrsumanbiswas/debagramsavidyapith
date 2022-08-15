@@ -1,7 +1,5 @@
 export interface homePage {
-    slide_imgs: {
-        img: string;
-    }[];
+    slider_images: string[];
     overview: string;
     notice: string;
     latest_news: {
@@ -20,6 +18,5 @@ export interface homePage {
     };
     events: [];
     featured_gallery: [];
-    // scool_map: string;
 }
 
