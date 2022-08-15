@@ -23,5 +23,9 @@ export class DatabaseService {
       })
   }
 
+  readData(base_url: string, id: string): Promise<DataSnapshot> {
+    return get(ref(this.database, `${base_url}/${id}`))
+  }
+
   constructor(private database: Database) { }
 }
