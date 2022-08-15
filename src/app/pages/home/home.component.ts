@@ -8,29 +8,7 @@ import { DatabaseService } from 'src/app/services/database.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  data: homePage | any = {
-    slide_imgs: [
-      {img:""}
-    ],
-    overview: '',
-    notice: '',
-    latest_news: {
-      academics: {
-        img: '',
-        details: ''
-      },
-      athletics: {
-        img: '',
-        details: ''
-      },
-      campus_life: {
-        img: '',
-        details: ''
-      }
-    },
-    events: [],
-    featured_gallery: []
-  };
+  data!: homePage;
 
   slideConfig = {
     slidesToShow: 1,
@@ -43,7 +21,13 @@ export class HomeComponent {
 
   constructor(private database: DatabaseService) {
 
-    database.writeData('page','home',this.data)
+    // database.writeData('page','home',this.data)
+    database.readData('page', 'home').then(
+      (value) => {
+        console.log(1, this.data)
+        this.data = value.val()
+      }
+    )
 
   }
 
