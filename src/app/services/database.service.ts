@@ -27,6 +27,15 @@ export class DatabaseService {
     return get(ref(this.database, `${base_url}/${id}`))
   }
 
+  // updateData(base_url: string, id: string, value: any) {
+  //   update(ref(this.database, `${base_url}/${id}`), value)
+  //     .catch(
+  //       (error) => {
+  //         console.log(error);
+  //       }
+  //     )
+  // }  amake pore korte hobe // I'm havig issues
+
   deleteData(base_url: string, id: string) {
     remove(ref(this.database, `${base_url}/${id}`))
       .catch(
