@@ -27,5 +27,13 @@ export class DatabaseService {
     return get(ref(this.database, `${base_url}/${id}`))
   }
 
+  deleteData(base_url: string, id: string) {
+    remove(ref(this.database, `${base_url}/${id}`))
+      .catch(
+        (error) => {
+          console.log(error);
+        }
+      )
+  }
   constructor(private database: Database) { }
 }
