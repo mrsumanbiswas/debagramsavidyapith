@@ -8,7 +8,11 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideAnalytics, getAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
+import { provideMessaging, getMessaging } from '@angular/fire/messaging';
+import { providePerformance, getPerformance } from '@angular/fire/performance';
+import { provideRemoteConfig, getRemoteConfig } from '@angular/fire/remote-config';
+import { provideStorage, getStorage } from '@angular/fire/storage';
 // material theme
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
@@ -53,15 +57,22 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
     provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore()),
+    provideAnalytics(() => getAnalytics()),
+    provideMessaging(() => getMessaging()),
+    providePerformance(() => getPerformance()),
+    provideRemoteConfig(() => getRemoteConfig()),
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+
   ],
-  providers: [],
+  providers: [
+    ScreenTrackingService, UserTrackingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
