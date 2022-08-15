@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { update } from '@firebase/database';
 import { homePage } from 'src/app/models/home-page-data';
-import { PageDataService } from '../../services/page-data.service'
 
 @Component({
   selector: 'app-admin',
@@ -35,7 +33,6 @@ export class AdminComponent {
   }
 
   constructor(
-    private pageData: PageDataService,
     private _formBuilder: FormBuilder
   ) { }
 

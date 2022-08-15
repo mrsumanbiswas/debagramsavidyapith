@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { homePage } from 'src/app/models/home-page-data';
-import { PageDataService } from '../../services/page-data.service'
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,9 @@ import { PageDataService } from '../../services/page-data.service'
 })
 export class HomeComponent {
   data: homePage | any = {
-    slide_imgs: [],
+    slide_imgs: [
+      {img:""}
+    ],
     overview: '',
     notice: '',
     latest_news: {
@@ -39,14 +41,10 @@ export class HomeComponent {
     autoplaySpeed: 3000
   };
 
-  constructor(private PageData: PageDataService) {
+  constructor(private database: DatabaseService) {
 
-    this.PageData.getPageData('home-page').then(
-      (value) => (
-        this.data = value.data()
-      ),
-      (err) => (console.log(err))
-    )
+    database.writeData('page','home',this.data)
+
   }
 
 }
