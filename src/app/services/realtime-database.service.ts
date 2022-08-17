@@ -14,7 +14,7 @@ import {
 @Injectable({
   providedIn: 'root'
 })
-export class DatabaseService {
+export class RealtimeDatabaseService {
 
   writeData(base_url: string, id: string, value: any) {
     set(child(ref(this.database), `${base_url}/${id}`), value)
@@ -44,5 +44,7 @@ export class DatabaseService {
         }
       )
   }
+
+
   constructor(private database: Database) { }
 }
