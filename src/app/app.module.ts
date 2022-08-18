@@ -13,6 +13,7 @@ import { provideMessaging, getMessaging } from '@angular/fire/messaging';
 import { providePerformance, getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig, getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore'
 // material theme
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
@@ -59,6 +60,7 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
     provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),
     provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
     provideAnalytics(() => getAnalytics()),
     provideMessaging(() => getMessaging()),
     providePerformance(() => getPerformance()),
