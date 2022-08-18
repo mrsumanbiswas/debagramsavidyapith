@@ -2,8 +2,11 @@
 //good! #222831 #393E46 #00ADB5 #EEEEEE
 //  black #100F0F
 main {
-    max-width: 100vw;
     color: #EEEEEE;
+    
+    * {
+        max-width: 100vw;
+    }
 
     header {
         top: 0;
