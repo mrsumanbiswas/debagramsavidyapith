@@ -1,11 +1,11 @@
-<mat-toolbar>
+<mat-toolbar [style.maxWidth]="window_width">
     <button mat-icon-button id="menu-button" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
     </button>
     <span class="spacer"></span>
     <!-- App name -->
     <a id="app" routerLink="/">
-        <img src="/assets/favicon/favicon-32x32.png" alt="school-logo">
+        <img src="/assets/favicon/favicon-32x32.png" alt="school-logo" *ngIf="window_width >= 350">
         <span *ngIf="!search_quary && window_width >= 1024">DEBAGRAM S.A. VIDYAPITH (H.S.)</span>
     </a>
     <span class="spacer"></span>
