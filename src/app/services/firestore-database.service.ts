@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { deleteDoc, doc, DocumentSnapshot, Firestore, getDoc, setDoc, updateDoc } from '@angular/fire/firestore';
+import { deleteDoc, doc, DocumentData, DocumentSnapshot, Firestore, getDoc, setDoc, updateDoc } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +7,9 @@ import { deleteDoc, doc, DocumentSnapshot, Firestore, getDoc, setDoc, updateDoc 
 export class FirestoreDatabaseService {
 
   // Set Data
-  setData(base_url: string, id: string, data: any) {
+  setData(base_url: string, id: string, data: {}) {
     setDoc(doc(this.database, `${base_url}/${id}`), data)
-      .then(
-        (value) => {
-          console.log(value);
-        },
+      .catch(
         (error) => {
           console.log(error);
         }
@@ -20,18 +17,15 @@ export class FirestoreDatabaseService {
   }
 
   // Get Data
-  getData(base_url: string, id: string): Promise<DocumentSnapshot> {
-    return getDoc(doc(this.database, `${base_url}/${id}`))
+  async getData(base_url: string, id: string): Promise<DocumentData | undefined> {
+    return (await (getDoc(doc(this.database, `${base_url}/${id}`)))).data()
   }
 
-  
+
   // Update Data	
-  updateData(base_url: string, id: string, data: any) {
+  updateData(base_url: string, id: string, data: {}) {
     updateDoc(doc(this.database, `${base_url}/${id}`), data)
-      .then(
-        (value) => {
-          console.log(value);
-        },
+      .catch(
         (error) => {
           console.log(error);
         }
@@ -41,10 +35,7 @@ export class FirestoreDatabaseService {
   // Delete Data
   deleteData(base_url: string, id: string) {
     deleteDoc(doc(this.database, `${base_url}/${id}`))
-      .then(
-        (value) => {
-          console.log(value);
-        },
+      .catch(
         (error) => {
           console.log(error);
         }
