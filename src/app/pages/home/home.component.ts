@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { homePage } from 'src/app/models/home-page-data';
-import { DatabaseService } from 'src/app/services/database.service';
+import { FirestoreDatabaseService } from 'src/app/services/firestore-database.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import { DatabaseService } from 'src/app/services/database.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  data!: homePage;
+  data!: homePage | any;
 
   slideConfig = {
     slidesToShow: 1,
@@ -19,12 +19,12 @@ export class HomeComponent {
     autoplaySpeed: 3000
   };
 
-  constructor(database: DatabaseService) {
+  constructor(firestore_database: FirestoreDatabaseService) {
 
-    database.readData('page', 'home').then(
+    firestore_database.getData('page', 'home').then(
       (value) => {
         console.log(1, this.data)
-        this.data = value.val()
+        this.data = value
       }
     )
 
