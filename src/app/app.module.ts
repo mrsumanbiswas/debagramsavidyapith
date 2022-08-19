@@ -28,13 +28,11 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { ToolsComponent } from './pages/tools/tools.component';
 import { UserComponent } from './pages/user/user.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
-import { LoginComponent } from './components/auth/login/login.component';
-import { RegisterComponent } from './components/auth/register/register.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { DoubtsComponent } from './pages/doubts/doubts.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
+import { AccountComponent } from './components/auth/account/account.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +43,11 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
     ToolsComponent,
     UserComponent,
     PageNotFoundComponent,
-    ForgotPasswordComponent,
-    LoginComponent,
-    RegisterComponent,
     FooterComponent,
     HeaderComponent,
     DoubtsComponent,
-    BlogsComponent
+    BlogsComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
