@@ -39,8 +39,8 @@ export class AuthenticationService {
           localStorage.setItem('displayName', user.displayName)
           // saving data to detabase
           this.database.setData('user', user.uid, user)
-          window.location.reload()
         }
+        location.reload()
       }
     )
   }
@@ -51,6 +51,7 @@ export class AuthenticationService {
     await signOut(this.auth);
     localStorage.clear();
     sessionStorage.clear();
+    location.replace('/');
   }
 
   constructor(private auth: Auth, private database: FirestoreDatabaseService) { }
