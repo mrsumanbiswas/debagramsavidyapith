@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AccountComponent } from '../../auth/account/account.component';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -6,12 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   search_quary!: string;
-
   window_width!: number;
 
   ngOnInit() {
     this.window_width = window.innerWidth;
   }
 
-  constructor() { }
+  openDialog(): void {
+    this.dialog.open(AccountComponent, {
+      width: '250px',
+      enterAnimationDuration: '1500ms',
+      exitAnimationDuration: '1000ms',
+      hasBackdrop: true
+    });
+  }
+
+  constructor(private dialog: MatDialog) { }
 }
