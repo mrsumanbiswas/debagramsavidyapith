@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, GoogleAuthProvider, signOut, signInWithPopup } from '@angular/fire/auth';
+import { Auth, GoogleAuthProvider, signOut, signInWithPopup, signInWithRedirect, getRedirectResult } from '@angular/fire/auth';
 import { FirestoreDatabaseService } from './firestore-database.service';
 
 @Injectable({
@@ -22,8 +22,9 @@ export class AuthenticationService {
     return (sessionStorage.getItem('isLogedIn') === 'true') ? true : false;
   }
 
-  signIn() {
-    const credential = signInWithPopup(this.auth, new GoogleAuthProvider()).then(
+  async signIn() {
+
+    signInWithPopup(this.auth, new GoogleAuthProvider()).then(
       (credential) => {
         sessionStorage.setItem('user', JSON.stringify(credential.user))
       }
@@ -38,6 +39,7 @@ export class AuthenticationService {
           localStorage.setItem('displayName', user.displayName)
           // saving data to detabase
           this.database.setData('user', user.uid, user)
+          window.location.reload()
         }
       }
     )

@@ -11,7 +11,9 @@ export class AccountComponent implements OnInit {
   authState!: boolean;
   data: any;
 
-  constructor(public auth: AuthenticationService) { }
+  constructor(public auth: AuthenticationService) {
+    this.authState = this.auth.isLogedIn();
+  }
 
   ngOnInit(): void {
     this.authState = this.auth.isLogedIn()
