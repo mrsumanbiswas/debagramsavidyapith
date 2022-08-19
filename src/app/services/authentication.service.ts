@@ -12,14 +12,14 @@ export class AuthenticationService {
     this.auth.onAuthStateChanged(
       (user) => {
         sessionStorage.setItem(
-          'isLogedin', JSON.stringify(
-            (user?.uid === localStorage.getItem('uid'))
+          'isLogedIn', JSON.stringify(
+            ((user?.uid === localStorage.getItem('uid')) && (localStorage.getItem('uid') !== null))
           )
         )
       }
     )
     // retriving from seeion storage
-    return (sessionStorage.getItem('isLogedin')) ? true : false;
+    return (sessionStorage.getItem('isLogedIn') === 'true') ? true : false;
   }
 
   signIn() {
