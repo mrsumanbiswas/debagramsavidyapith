@@ -1,11 +1,12 @@
-div{
+div {
     text-align: center;
-    img{
-        border: rgba(0, 0, 0, 0.450) 5px solid;
-        border-radius: 30%;
+
+    img {
+        border-radius: 50%;
     }
-    button{
-        &:last-child{
+
+    button {
+        &:last-child {
             margin-left: 2rem;
         }
     }
