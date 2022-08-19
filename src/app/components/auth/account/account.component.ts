@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-account',
@@ -6,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit {
+
+  authState!: boolean;
   data: any;
-  constructor() { }
-  onNoClick() { }
+
+  constructor(public auth: AuthenticationService) { }
 
   ngOnInit(): void {
+    this.authState = this.auth.isLogedIn()
+    this.data = {
+      displayName: localStorage.getItem('displayName'),
+      photoURL: localStorage.getItem('photoURL')
+    }
   }
-
 }
