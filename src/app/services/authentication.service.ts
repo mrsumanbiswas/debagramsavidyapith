@@ -22,8 +22,7 @@ export class AuthenticationService {
     return (sessionStorage.getItem('isLogedIn') === 'true') ? true : false;
   }
 
-  async signIn() {
-
+  signIn() {
     signInWithPopup(this.auth, new GoogleAuthProvider()).then(
       (credential) => {
         sessionStorage.setItem('user', JSON.stringify(credential.user))
@@ -40,7 +39,6 @@ export class AuthenticationService {
           // saving data to detabase
           this.database.setData('user', user.uid, user)
         }
-        location.reload()
       }
     )
   }
