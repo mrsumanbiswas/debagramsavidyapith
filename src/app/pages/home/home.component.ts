@@ -23,7 +23,6 @@ export class HomeComponent {
 
     firestore_database.getData('page', 'home').then(
       (value) => {
-        console.log(1, this.data)
         this.data = value
       }
     )
