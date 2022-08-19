@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, GoogleAuthProvider, signOut, signInWithPopup, authState } from '@angular/fire/auth';
+import { Auth, GoogleAuthProvider, signOut, signInWithPopup } from '@angular/fire/auth';
 import { FirestoreDatabaseService } from './firestore-database.service';
 
 @Injectable({
@@ -19,7 +19,7 @@ export class AuthenticationService {
       }
     )
     // retriving from seeion storage
-    return (sessionStorage.getItem('isLogedin')) ? true : false
+    return (sessionStorage.getItem('isLogedin')) ? true : false;
   }
 
   signIn() {
