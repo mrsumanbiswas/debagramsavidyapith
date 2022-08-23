@@ -19,14 +19,14 @@ export class HomeComponent {
     autoplaySpeed: 3000
   };
 
-  constructor(firestore_database: FirestoreDatabaseService) {
-
+  constructor(
+    firestore_database: FirestoreDatabaseService) {
+    // home page data pulling from google firestore datbase
     firestore_database.getData('page', 'home').then(
       (value) => {
         this.data = value
       }
     )
-
   }
 
 }
