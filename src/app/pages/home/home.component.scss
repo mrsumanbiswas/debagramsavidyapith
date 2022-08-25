@@ -1,73 +1,137 @@
-.demo-table {
-  width: 100%;
+// table data
+.mat-table {
+  margin: auto;
+  width: min-content;
+  background-color: whitesmoke;
 }
 
-.mat-column-demo-position {
-  width: 32px;
+.mat-column-i,
+.mat-column-ii,
+.mat-column-iii,
+.mat-column-iv,
+.mat-column-v {
+  width: auto;
+  padding: 2vw;
+  text-align: center;
   border-right: 1px solid currentColor;
-  padding-right: 24px;
-  text-align: center;
+
+  &:nth-child(even) {
+    background-color: white;
+  }
 }
 
-.mat-column-demo-name {
-  padding-left: 16px;
-  font-size: 20px;
+// spinner
+mat-spinner {
+  margin: 15vh auto;
 }
 
-.mat-column-demo-weight {
-  font-style: italic;
+// border radius
+ngx-slick-carousel img,
+#school-map iframe,
+#feedback * {
+  border-radius: 0.5rem !important;
 }
 
-.mat-column-demo-symbol {
-  width: 32px;
-  text-align: center;
-  font-weight: bold;
+div ngx-slick-carousel div {
+  margin: 0 0.5rem !important;
 }
 
+main {
+  margin-bottom: 8vh;
 
-#overview {}
+  h1 {
+    margin-top: 2rem;
+  }
+}
 
-#notice {}
+// card wrapper
+.card-wrapper {
 
-#featured-gallery {}
-
-#events {
   h1 {
     margin: 1rem;
+    width: 100vw;
   }
 
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
 
   mat-card {
+    max-height: 240px;
+    max-width: 240px;
     padding: 1rem;
-    margin: 1rem;
+    margin: auto;
+    margin-top: 1rem;
   }
 
 }
 
-#school-calendar {}
 
-#history {}
+////////
+// IDs //
+////////
 
-#campus {}
 
-#teachers {}
+// #image-slider {}
 
-#managing-committee {}
+// #overview {}
 
-#admission {}
+// #notice {}
+
+// #featured-gallery {}
+
+// #events {}
+
+// #school-calendar {}
+
+// #history {}
+
+// #campus {}
+
+// #teachers {}
+
+// #managing-committee {}
+
+// #admission {}
 
 #academics {
-  #subject-offered {}
+  h2 {
+    margin-top: 3rem;
+    text-align: center;
+  }
 
-  #school-timings {}
+  // #subject-offered {}
 
-  #rules-regulations {}
+  // #school-timings {}
 
-  #alumni {}
+  // #rules-regulations {}
+
+  // #alumni {}
 }
 
-#contact-us {}
+#contact-us {
+  .mat-card-content {
+    margin: auto;
+    padding: auto;
+  }
+}
 
-#feedback {}
+// #school-map {}
+
+#feedback {
+
+  color: black;
+
+  h1 {
+    color: white;
+  }
+
+  form {
+    margin-top: 1rem;
+  }
+
+  textarea {
+    min-width: 10vw;
+    min-height: 10vh;
+  }
+}
