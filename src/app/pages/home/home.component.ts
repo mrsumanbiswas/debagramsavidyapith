@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
     // home page data pulling from google firestore datbase
     firestore_database.getData('page', 'home').then(
       (value) => {
-        this.data = value
+        this.data = value;
       }
     )
   }
