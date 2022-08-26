@@ -33,6 +33,7 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { DoubtsComponent } from './pages/doubts/doubts.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { AccountComponent } from './components/auth/account/account.component';
+import { UploadPhotosComponent } from './pages/upload-photos/upload-photos.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AccountComponent } from './components/auth/account/account.component';
     HeaderComponent,
     DoubtsComponent,
     BlogsComponent,
-    AccountComponent
+    AccountComponent,
+    UploadPhotosComponent
   ],
   imports: [
     BrowserModule,
