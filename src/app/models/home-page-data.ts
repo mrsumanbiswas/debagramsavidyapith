@@ -1,22 +1,54 @@
 export interface homePage {
     slider_images: string[];
     overview: string;
-    notice: string;
-    latest_news: {
-        academics: {
-            img: string;
-            details: string;
-        },
-        athletics: {
-            img: string;
-            details: string;
-        },
-        campus_life: {
-            img: string;
-            details: string;
-        }
+    notice: {
+        img: string;
+        details: string;
+    }[];
+    featured_gallery: string[];
+    events: {
+        img: string;
+        details: string;
+    }[];
+    // school_calender: [];
+    // history: [];
+    campus: {
+        img: string;
+        details: string;
+    }[];
+    teachers: {
+        img: string;
+        name: string;
+        subject: string;
+    }[];
+    managing_committee: {
+        img: string;
+        name: string;
+        topic: string;
+    }[];
+    // admission: {};
+    subject_offered: {
+        v: string[];
+        vi: string[];
+        vii_viii: string[];
+        ix_x: string[];
+        xi_xii: string[];
     };
-    events: [];
-    featured_gallery: [];
+    school_timing: {
+        class: string;
+        i: string;
+        ii: string;
+        iii: string;
+        iv: string;
+    }[];
+    rules_regulations: string[];
+    alumni: {
+        img: string;
+        name: string;
+    }[];
+    contact_us: {
+        type: string;
+        details: string;
+    }[];
 }
 

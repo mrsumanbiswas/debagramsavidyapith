@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   openDialog(): void {
     this.dialog.open(AccountComponent, {
       width: '250px',
-      enterAnimationDuration: '1500ms',
+      enterAnimationDuration: '800ms',
       exitAnimationDuration: '1000ms',
       hasBackdrop: true
     });
