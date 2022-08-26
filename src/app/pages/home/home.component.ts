@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Timestamp } from '@angular/fire/firestore';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatStepper } from '@angular/material/stepper';
 import { homePage } from 'src/app/models/home-page-data';
 import { FirestoreDatabaseService } from 'src/app/services/firestore-database.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  tableWidth = 'min-content';
   data!: homePage | any;
 
   // displayed columns
@@ -51,7 +54,7 @@ export class HomeComponent implements OnInit {
   });
 
   constructor(
-    firestore_database: FirestoreDatabaseService,
+    private firestore_database: FirestoreDatabaseService,
     private _formBuilder: FormBuilder
   ) {
     // home page data pulling from google firestore datbase
@@ -63,16 +66,34 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // slide config
     let x = 1, y = 1;
     if (innerWidth >= 1024) {
       x = 4;
       y = 2;
+      this.tableWidth = 'max-content'
     } else if (innerWidth < 1024 && innerWidth > 425) {
       x = 2;
       y = 1;
+      this.tableWidth = 'fit-content'
     }
     this.slideConfig.slidesToShow = x;
     this.slideConfig.slidesToScroll = y;
+  }
+
+  submitFeedback(stepper: MatStepper) {
+    let id!: string;
+    let data = {
+      Name: this.firstFormGroup.value.firstCtrl,
+      Email: this.secondFormGroup.value.secondCtrl,
+      FeedBack: this.thirdFormGroup.value.thirdCtrl,
+      TimeStamp: Timestamp.now(),
+      isLogedIn: sessionStorage.getItem('isLogedIn'),
+      uid: localStorage.getItem('uid'),
+    }
+
+    id = (data.uid === null) ? data.Name + JSON.stringify(data.TimeStamp.nanoseconds) : data.uid;
+    this.firestore_database.setData('feedBack', id, data)
+    localStorage.setItem('feedBack', JSON.stringify(data))
+    stepper.reset()
   }
 }

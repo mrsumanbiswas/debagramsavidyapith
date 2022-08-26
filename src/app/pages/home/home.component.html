@@ -151,41 +151,32 @@
             <h2>
                 Subject Offered
             </h2>
-            <mat-table>
-                <!-- Class  V -->
-                <ng-container matColumnDef="i">
-                    <th mat-header-cell *matHeaderCellDef> Class V </th>
-                    <td mat-cell *matCellDef="let element"> {{data.subject_offered.v}} </td>
-                </ng-container>
-
-                <!-- Class VI -->
-                <ng-container matColumnDef="ii">
-                    <th mat-header-cell *matHeaderCellDef> Class VI </th>
-                    <td mat-cell *matCellDef="let element"> {{data.subject_offered.vi}} </td>
-                </ng-container>
-
-                <!-- Class VII & VIII -->
-                <ng-container matColumnDef="iii">
-                    <th mat-header-cell *matHeaderCellDef> Class VII &amp; VIII </th>
-                    <td mat-cell *matCellDef="let element"> {{data.subject_offered.vii_viii}} </td>
-                </ng-container>
-
-                <!-- Class IX & X -->
-                <ng-container matColumnDef="iv">
-                    <th mat-header-cell *matHeaderCellDef> Class IX &amp; X </th>
-                    <td mat-cell *matCellDef="let element"> {{data.subject_offered.ix_x}} </td>
-                </ng-container>
-
-                <!-- Class XI & XII -->
-                <ng-container matColumnDef="v">
-                    <th mat-header-cell *matHeaderCellDef> Class XI &amp; XII </th>
-                    <td mat-cell *matCellDef="let element"> {{data.subject_offered.xi_xii}} </td>
-                </ng-container>
-
-
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </mat-table>
+            <table [style.margin]="(tableWidth === 'min-content')?'auto -3rem':'auto'">
+                <tr>
+                    <th>Class V</th>
+                    <th>Class VI</th>
+                    <th>Class VII &amp; VIII</th>
+                    <th>Class IX &amp; X</th>
+                    <th>Class XI &amp; XII</th>
+                </tr>
+                <tr *ngFor="let x of data.subject_offered.xi_xii; index as i">
+                    <td>
+                        {{data.subject_offered.v[i]}}
+                    </td>
+                    <td>
+                        {{data.subject_offered.vi[i]}}
+                    </td>
+                    <td>
+                        {{data.subject_offered.vii_viii[i]}}
+                    </td>
+                    <td>
+                        {{data.subject_offered.ix_x[i]}}
+                    </td>
+                    <td>
+                        {{data.subject_offered.xi_xii[i]}}
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <!-- school timings -->
@@ -193,10 +184,11 @@
             <h2>
                 School Timings
             </h2>
-            <mat-table [dataSource]="data.school_timing">
+            <mat-table [dataSource]="data.school_timing" [style.width]="tableWidth"
+                [style.margin-left]="(tableWidth === 'min-content')?'-1rem':'auto'">
                 <!-- Classes -->
                 <ng-container matColumnDef="i">
-                    <th mat-header-cell *matHeaderCellDef> Classes </th>
+                    <th mat-header-cell *matHeaderCellDef> Class </th>
                     <td mat-cell *matCellDef="let element"> {{element.class}} </td>
                 </ng-container>
 
@@ -285,7 +277,7 @@
         <h1>
             Feedback Form
         </h1>
-        <mat-stepper linear #stepper orientation="vertical">
+        <mat-stepper linear orientation="vertical" #stepper>
             <mat-step [stepControl]="firstFormGroup">
                 <form [formGroup]="firstFormGroup">
                     <ng-template matStepLabel>Fill out your name</ng-template>
@@ -331,7 +323,7 @@
                 <p>You are now done.</p>
                 <div>
                     <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button>Submit</button>
+                    <button mat-button (click)="submitFeedback(stepper);">Submit</button>
                 </div>
             </mat-step>
         </mat-stepper>
@@ -340,6 +332,6 @@
 
 <!-- If data not loaded then it will show -->
 <div *ngIf="!data">
-    <h1>Loading Data...</h1>
+    <h1>Loading...</h1>
     <mat-spinner></mat-spinner>
 </div>
