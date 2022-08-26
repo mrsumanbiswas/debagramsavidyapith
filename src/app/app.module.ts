@@ -34,6 +34,7 @@ import { DoubtsComponent } from './pages/doubts/doubts.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { AccountComponent } from './components/auth/account/account.component';
 import { PhotosComponent } from './pages/photos/photos.component';
+import { UploadPhotosComponent } from './components/upload-photos/upload-photos.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { PhotosComponent } from './pages/photos/photos.component';
     DoubtsComponent,
     BlogsComponent,
     AccountComponent,
-    PhotosComponent
+    PhotosComponent,
+    UploadPhotosComponent
   ],
   imports: [
     BrowserModule,
