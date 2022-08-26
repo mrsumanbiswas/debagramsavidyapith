@@ -63,58 +63,11 @@
         </h1>
     </div>
 
-    <!-- history -->
-    <div id="history" *ngIf="false">
+    <!-- Playback -->
+    <div id="playback" *ngIf="false">
         <h1>
-            History
+            Playback
         </h1>
-    </div>
-
-    <!-- campus -->
-    <div id="campus" class="card-wrapper">
-        <h1>
-            Campus
-        </h1>
-        <mat-card *ngFor="let campus of data.campus">
-            <img mat-card-image alt="campus-photo" [src]="campus.img">
-            <mat-card-content>
-                <strong>{{campus.details}}</strong>
-            </mat-card-content>
-        </mat-card>
-    </div>
-
-    <!-- teachers -->
-    <div id="teachers">
-        <h1>
-            Teachers
-        </h1>
-        <ngx-slick-carousel [config]="slideConfig">
-            <div ngxSlickItem *ngFor="let teacher of data.teachers" class="slide">
-                <img [src]="teacher.img" alt="Teachers" width="100%">
-                <p>
-                    <b>Name</b> : {{teacher.name}}
-                    <br>
-                    <b>Subject</b> : {{teacher.subject}}
-                </p>
-            </div>
-        </ngx-slick-carousel>
-    </div>
-
-    <!-- managing committee -->
-    <div id="managing-committee">
-        <h1>
-            Managing Committee
-        </h1>
-        <ngx-slick-carousel [config]="slideConfig">
-            <div ngxSlickItem *ngFor="let mc of data.managing_committee" class="slide">
-                <img [src]="mc.img" alt="Manageing Committee" width="100%">
-                <p>
-                    <b>Name</b> : {{mc.name}}
-                    <br>
-                    <b>Topic</b> : {{mc.topic}}
-                </p>
-            </div>
-        </ngx-slick-carousel>
     </div>
 
     <!-- admission -->
@@ -233,7 +186,7 @@
         </div>
 
         <!-- alumni -->
-        <div id="alumni">
+        <div id="alumni" *ngIf="false">
             <h2>
                 Alumni
             </h2>
@@ -248,6 +201,55 @@
         </div>
 
     </div>
+
+
+    <!-- campus -->
+    <div id="campus" class="card-wrapper">
+        <h1>
+            Campus
+        </h1>
+        <mat-card *ngFor="let campus of data.campus">
+            <img mat-card-image alt="campus-photo" [src]="campus.img">
+            <mat-card-content>
+                <strong>{{campus.details}}</strong>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <!-- teachers -->
+    <div id="teachers" *ngIf="false">
+        <h1>
+            Teachers
+        </h1>
+        <ngx-slick-carousel [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let teacher of data.teachers" class="slide">
+                <img [src]="teacher.img" alt="Teachers" width="100%">
+                <p>
+                    <b>Name</b> : {{teacher.name}}
+                    <br>
+                    <b>Subject</b> : {{teacher.subject}}
+                </p>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+
+    <!-- managing committee -->
+    <div id="managing-committee" *ngIf="false">
+        <h1>
+            Managing Committee
+        </h1>
+        <ngx-slick-carousel [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let mc of data.managing_committee" class="slide">
+                <img [src]="mc.img" alt="Manageing Committee" width="100%">
+                <p>
+                    <b>Name</b> : {{mc.name}}
+                    <br>
+                    <b>Topic</b> : {{mc.topic}}
+                </p>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+
 
     <!-- contact us -->
     <div id="contact-us">

@@ -27,10 +27,17 @@ export class HomeComponent implements OnInit {
   slider_image = {
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: true,
+    dots: false,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000
+    autoplaySpeed: 3000,
+    draggable:false,
+    fade:true,
+    pauseOnHover:false,
+    arrows:false,
+    adaptiveHeight:true,
+    centerMode:true,
+    waitForAnimate:true,
   };
 
   slideConfig = {
@@ -39,7 +46,11 @@ export class HomeComponent implements OnInit {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 1500
+    autoplaySpeed: 1500,
+    arrows:false,
+    adaptiveHeight:true,
+    centerMode:true,
+    waitForAnimate:true,
   };
 
   // form group and it's validations
