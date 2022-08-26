@@ -89,17 +89,31 @@ main {
 // #featured-gallery {}
 
 #events {
-  margin: auto;
-  padding: auto;
+  margin-top: 20vh;
+  max-height: 80vh;
+  overflow-x: auto;
+
+  h1 {
+    top: 0;
+    z-index: 1000;
+    position: sticky;
+  }
 
   .mat-card {
-    margin: 0.5rem;
-    margin-bottom: 30vh;
+    height: max-content;
+    background-color: transparent;
   }
 
   .mat-card-content {
-    position: relative;
-    margin-top: -5vh;
+    p {
+      position: relative;
+      margin-top: -2.5rem;
+      opacity: 75%;
+    }
+
+    img {
+      z-index: 500;
+    }
   }
 }
 
@@ -107,27 +121,19 @@ main {
 
 // #playback {}
 
-#campus {
-  margin-top: 50vh;
-
-  .mat-card-content {
-    text-align: center;
-  }
-}
-
-// #teachers {}
-
-// #managing-committee {}
-
 // #admission {}
 
 #academics {
+  padding: auto;
+
   h2 {
     margin-top: 3rem;
     text-align: center;
   }
 
   #subject-offered {
+    overflow: auto;
+
     table {
       width: auto;
       margin: auto;
@@ -152,7 +158,9 @@ main {
     }
   }
 
-  // #school-timings {}
+  #school-timings {
+    overflow-x: auto;
+  }
 
   #rules-regulations {
 
@@ -176,6 +184,16 @@ main {
 
   // #alumni {}
 }
+
+#campus {
+  .mat-card-content {
+    text-align: center;
+  }
+}
+
+// #teachers {}
+
+// #managing-committee {}
 
 #contact-us {
   .mat-card-content {

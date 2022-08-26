@@ -49,11 +49,14 @@
             Events
         </h1>
         <mat-card *ngFor="let event of data.events">
-            <img mat-card-image alt="events-photo" [src]="event.img">
             <mat-card-content>
-                <strong>Details: </strong>{{event.details}}
+                <img mat-card-image alt="events-photo" [src]="event.img">
+                <p>
+                    <strong>Details: </strong>{{event.details}}
+                </p>
             </mat-card-content>
         </mat-card>
+
     </div>
 
     <!-- school calendar -->
@@ -275,7 +278,7 @@
     </div>
 
     <!-- Feedback Form -->
-    <div id="feedback">
+    <div id="feedback" *ngIf="!feedback">
         <h1>
             Feedback Form
         </h1>
