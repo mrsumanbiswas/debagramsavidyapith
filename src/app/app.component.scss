@@ -13,6 +13,7 @@ main {
     }
 
     #router-outlet {
+        overflow: auto;
         padding: 1rem 3rem;
         min-height: 35vh;
         background-color: #222831;
@@ -20,6 +21,7 @@ main {
 
     footer {
         min-height: 50vh;
+        overflow-y: auto;
         background-color: #283149;
     }
 }
