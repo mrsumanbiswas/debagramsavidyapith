@@ -33,7 +33,7 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { DoubtsComponent } from './pages/doubts/doubts.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { AccountComponent } from './components/auth/account/account.component';
-import { UploadPhotosComponent } from './pages/upload-photos/upload-photos.component';
+import { PhotosComponent } from './pages/photos/photos.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import { UploadPhotosComponent } from './pages/upload-photos/upload-photos.compo
     DoubtsComponent,
     BlogsComponent,
     AccountComponent,
-    UploadPhotosComponent
+    PhotosComponent
   ],
   imports: [
     BrowserModule,

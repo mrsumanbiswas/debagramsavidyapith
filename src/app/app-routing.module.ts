@@ -6,8 +6,8 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
 import { DoubtsComponent } from './pages/doubts/doubts.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PhotosComponent } from './pages/photos/photos.component';
 import { ToolsComponent } from './pages/tools/tools.component';
-import { UploadPhotosComponent } from './pages/upload-photos/upload-photos.component';
 import { UserComponent } from './pages/user/user.component';
 
 const routerOptions: ExtraOptions = {
@@ -39,7 +39,7 @@ const routes: Routes = [
     path: 'about', component: AboutComponent
   },
   {
-    path: 'upload-photos', component: UploadPhotosComponent
+    path: 'photos', component: PhotosComponent
   },
   {
     path: 'page-not-found', component: PageNotFoundComponent
