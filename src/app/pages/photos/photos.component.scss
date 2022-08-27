@@ -1,0 +1,17 @@
+#photos {
+    display: flex;
+    flex-wrap: wrap;
+
+    .mat-card {
+        margin: auto;
+        margin-top: 2vh;
+        display: inline-block;
+    }
+}
+
+#top {
+    top: 90vh;
+    right: 3vw;
+    position: fixed;
+    background-color: royalblue;
+}
