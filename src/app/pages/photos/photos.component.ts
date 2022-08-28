@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photos.component.scss']
 })
 export class PhotosComponent implements OnInit {
-  
+ 
   constructor() { }
 
   ngOnInit(): void { }
@@ -14,4 +14,5 @@ export class PhotosComponent implements OnInit {
   top() {
     window.scrollTo(0, 0)
   }
+  
 }

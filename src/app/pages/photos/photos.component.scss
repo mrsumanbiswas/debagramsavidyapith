@@ -3,9 +3,20 @@
     flex-wrap: wrap;
 
     .mat-card {
-        margin: auto;
-        margin-top: 2vh;
+        max-width: 250px;
+        margin: 1vh auto;
         display: inline-block;
+    }
+
+    .mat-card-actions {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: inline-flex;
+
+        p {
+            width: 100%;
+        }
     }
 }
 
