@@ -8,20 +8,38 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class UploadPhotosComponent implements OnInit {
   uploadfraction!: number;
+  previewPhoto!: string | ArrayBuffer | null;
   fileData!: File;
 
-  constructor(
-    private storage: StorageService,
-  ) { }
+  constructor(private storage: StorageService) { }
 
   ngOnInit(): void { }
+
+
+
+  preview() {
+    let reader = new FileReader();
+
+    reader.readAsDataURL(this.fileData);
+
+    reader.onload = () => {
+      this.previewPhoto = reader.result;
+    };
+
+    reader.onerror = () => {
+      console.log(reader.error);
+    };
+  }
 
   photoSelected(files: FileList | null) {
     const file = files?.item(0)
     if (file !== null && file !== undefined) {
       this.fileData = file
+      this.preview()
+      return true
+    } else {
+      return false
     }
-
   }
 
   // uploads photo to storage and creates a data to the realtime database
@@ -35,7 +53,6 @@ export class UploadPhotosComponent implements OnInit {
             this.uploadfraction = (snapshot.bytesTransferred / snapshot.totalBytes);
           }
         )
-
     } else {
       alert(
         'Please sign-in to upload a photo'
