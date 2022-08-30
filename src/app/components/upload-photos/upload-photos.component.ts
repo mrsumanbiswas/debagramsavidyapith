@@ -45,7 +45,7 @@ export class UploadPhotosComponent implements OnInit {
   // uploads photo to storage and creates a data to the realtime database
   uploadPhoto() {
     if (
-      sessionStorage.getItem('isLogedIn') === 'false'
+      sessionStorage.getItem('isLogedIn') === 'true'
     ) {
       this.storage.uploadFile('photos', Date.now().toString(), this.fileData, 'realtime')
         .on('state_changed',
