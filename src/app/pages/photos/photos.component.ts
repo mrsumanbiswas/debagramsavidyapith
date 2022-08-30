@@ -10,7 +10,7 @@ import { onValue, Database, ref } from '@angular/fire/database';
   styleUrls: ['./photos.component.scss']
 })
 export class PhotosComponent implements OnInit {
-  postData!: {
+  postData: {
     uid: string;
     url: string;
     size: number;
@@ -19,7 +19,7 @@ export class PhotosComponent implements OnInit {
     timestamp: string;
     displayName: string;
     photoURL: string;
-  }[];
+  }[] = [];
 
   constructor(
     private database: Database,
@@ -27,7 +27,9 @@ export class PhotosComponent implements OnInit {
     private dialog: MatDialog,
   ) { }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void {
+    this.getData();
+  }
 
   // scrolls to TOP
   top() {
@@ -37,62 +39,48 @@ export class PhotosComponent implements OnInit {
   // opens photo upload 
   openDialog(): void {
     this.dialog.open(UploadPhotosComponent, {
-      width: '250px',
+      minWidth: '250px',
+      maxWidth: '400px',
       enterAnimationDuration: '800ms',
       exitAnimationDuration: '1000ms',
-      hasBackdrop: true
+      hasBackdrop: true,
     });
   }
 
-  // get User data
-  private async getUserData(uid: string): Promise<{
-    displayName: string;
-    photoURL: string;
-  }> {
-
-    const data = await this.firestore.getData('user', uid)
-    if (data) {
-      return {
-        displayName: data['displayName'],
-        photoURL: data['photoURL']
-      }
-    } else {
-      return {
-        displayName: '',
-        photoURL: ''
-      }
-    }
-  }
-
   // get realtime post data 
-  getData(){
+  getData() {
     onValue(
       ref(this.database, 'photos'),
       (snapshot) => {
+        let x = 0;
         snapshot.forEach(childsnapshot => {
-          async () => {
-            const post: {
-              uid: string;
-              url: string;
-              size: number;
-              vote: number;
-              name: string;
-              timestamp: string;
-            } = childsnapshot.val();
-            const user = await this.getUserData(post.uid);
-            this.postData.push(
-              {
-                url: post.url,
-                uid: post.uid,
-                vote: post.vote,
-                name: post.name,
-                size: post.size,
-                photoURL: user.photoURL,
-                timestamp: post.timestamp,
-                displayName: user.displayName,
+          // geting all the child snapshot form the snapshot of 'photos'
+          const post: {
+            uid: string;
+            url: string;
+            size: number;
+            vote: number;
+            name: string;
+            timestamp: string;
+          } = childsnapshot.val();
+
+          // get user data from firestore
+          this.firestore.getData('user', post.uid).then(
+            (user) => {
+              if (user != undefined) {
+                this.postData[x++] = {
+                  uid: post.uid,
+                  url: post.url,
+                  size: post.size,
+                  vote: post.vote,
+                  name: post.name,
+                  timestamp: post.timestamp,
+                  displayName: user['displayName'],
+                  photoURL: user['photoURL']
+                }
               }
-            );
-          }
+            }
+          );
         });
       }
     )
