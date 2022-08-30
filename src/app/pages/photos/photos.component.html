@@ -1,23 +1,23 @@
 <div id="intro">
     <!-- about photos -->
     <div id="about-photos">
-        
+
     </div>
     <!-- upload photos form -->
-    <app-upload-photos id="upload-photos"></app-upload-photos>
+    <button mat-raised-button (click)="openDialog();">UPLOAD</button>
 </div>
 <div id="photos">
     <!-- display photos with filter option -->
-    <mat-card>
+    <mat-card *ngFor="let post of postData">
         <mat-card-header>
-            <img src="" alt="" mat-card-avatar>
+            <img [src]="post.photoURL" mat-card-avatar>
             <mat-card-title></mat-card-title>
             <mat-card-subtitle></mat-card-subtitle>
         </mat-card-header>
-        <img src="../../../assets/page-not-found.jpg" alt="image" mat-card-image #image>
+        <img [src]="post.url" alt="image" mat-card-image #image>
         <mat-card-content>
             <p>IMAGE :: {{image.naturalWidth}}x{{image.naturalHeight}}</p>
-            <p>VOTES</p>
+            <p>VOTES :: {{post.vote}}</p>
         </mat-card-content>
         <mat-card-actions>
             <button mat-icon-button>
