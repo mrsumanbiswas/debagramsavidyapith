@@ -45,7 +45,7 @@ const routes: Routes = [
     path: 'page-not-found', component: PageNotFoundComponent
   },
   {
-    path: '', redirectTo: 'photos', pathMatch: 'full'
+    path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
     path: '**', redirectTo: 'page-not-found', pathMatch: 'full'
