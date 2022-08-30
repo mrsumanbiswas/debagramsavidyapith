@@ -35,6 +35,7 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
 import { AccountComponent } from './components/auth/account/account.component';
 import { PhotosComponent } from './pages/photos/photos.component';
 import { UploadPhotosComponent } from './components/upload-photos/upload-photos.component';
+import { DataLoadingComponent } from './components/data-loading/data-loading.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { UploadPhotosComponent } from './components/upload-photos/upload-photos.
     BlogsComponent,
     AccountComponent,
     PhotosComponent,
-    UploadPhotosComponent
+    UploadPhotosComponent,
+    DataLoadingComponent
   ],
   imports: [
     BrowserModule,
