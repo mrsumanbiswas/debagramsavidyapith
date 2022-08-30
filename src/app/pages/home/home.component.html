@@ -336,7 +336,4 @@
 </main>
 
 <!-- If data not loaded then it will show -->
-<div *ngIf="!data">
-    <h1>Loading...</h1>
-    <mat-spinner></mat-spinner>
-</div>
+<app-data-loading *ngIf="!data"></app-data-loading>
