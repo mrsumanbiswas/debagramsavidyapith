@@ -33,6 +33,9 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { DoubtsComponent } from './pages/doubts/doubts.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { AccountComponent } from './components/auth/account/account.component';
+import { PhotosComponent } from './pages/photos/photos.component';
+import { UploadPhotosComponent } from './components/upload-photos/upload-photos.component';
+import { DataLoadingComponent } from './components/data-loading/data-loading.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { AccountComponent } from './components/auth/account/account.component';
     HeaderComponent,
     DoubtsComponent,
     BlogsComponent,
-    AccountComponent
+    AccountComponent,
+    PhotosComponent,
+    UploadPhotosComponent,
+    DataLoadingComponent
   ],
   imports: [
     BrowserModule,

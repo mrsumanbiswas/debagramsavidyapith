@@ -6,6 +6,7 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
 import { DoubtsComponent } from './pages/doubts/doubts.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PhotosComponent } from './pages/photos/photos.component';
 import { ToolsComponent } from './pages/tools/tools.component';
 import { UserComponent } from './pages/user/user.component';
 
@@ -38,6 +39,9 @@ const routes: Routes = [
     path: 'about', component: AboutComponent
   },
   {
+    path: 'photos', component: PhotosComponent
+  },
+  {
     path: 'page-not-found', component: PageNotFoundComponent
   },
   {
@@ -49,7 +53,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,routerOptions)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

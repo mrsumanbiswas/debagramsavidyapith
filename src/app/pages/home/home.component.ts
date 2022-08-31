@@ -11,8 +11,9 @@ import { FirestoreDatabaseService } from 'src/app/services/firestore-database.se
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  tableWidth = 'min-content';
+  feedback!: boolean;
   data!: homePage | any;
+  tableWidth = 'min-content';
 
   // displayed columns
   displayedColumns: string[] = [
@@ -31,13 +32,13 @@ export class HomeComponent implements OnInit {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 3000,
-    draggable:false,
-    fade:true,
-    pauseOnHover:false,
-    arrows:false,
-    adaptiveHeight:true,
-    centerMode:true,
-    waitForAnimate:true,
+    draggable: false,
+    fade: true,
+    pauseOnHover: false,
+    arrows: false,
+    adaptiveHeight: true,
+    centerMode: true,
+    waitForAnimate: true,
   };
 
   slideConfig = {
@@ -47,10 +48,10 @@ export class HomeComponent implements OnInit {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 1500,
-    arrows:false,
-    adaptiveHeight:true,
-    centerMode:true,
-    waitForAnimate:true,
+    arrows: false,
+    adaptiveHeight: true,
+    centerMode: true,
+    waitForAnimate: true,
   };
 
   // form group and it's validations
@@ -77,6 +78,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // feedback cheker
+    this.feedback = (localStorage.getItem('feedBack') !== null) ? true : false;
+    //
     let x = 1, y = 1;
     if (innerWidth >= 1024) {
       x = 4;
@@ -106,5 +110,6 @@ export class HomeComponent implements OnInit {
     this.firestore_database.setData('feedBack', id, data)
     localStorage.setItem('feedBack', JSON.stringify(data))
     stepper.reset()
+    this.feedback = false;
   }
 }
