@@ -23,12 +23,27 @@
         <h1>
             Notice
         </h1>
-        <ngx-slick-carousel [config]="slideConfig">
+        <!-- <ngx-slick-carousel [config]="slideConfig">
             <div ngxSlickItem *ngFor="let notice of data.notice" class="slide">
                 <img [src]="notice.img" alt="notice" width="100%">
                 <p>{{notice.details}}</p>
             </div>
-        </ngx-slick-carousel>
+        </ngx-slick-carousel> -->
+        <button mat-raised-button id="photos" routerLink="/photos">Upload Photo(s) to this site</button>
+        <style>
+            #photos {
+                display: flex;
+                padding: 1rem;
+                margin: auto;
+                background-color: aquamarine;
+
+            }
+
+            #photos:hover {
+                zoom: 200%;
+                font-weight: 800;
+            }
+        </style>
     </div>
 
     <!-- featured gallery -->
